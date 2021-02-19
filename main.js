@@ -3,7 +3,7 @@ console.show()
 var width = device.width
 var height = device.height
 var 仓库名 = "JD_Speed"     //需要更换仓库名
-var 脚本文件夹 = 仓库名 + "/" + 仓库名 + "-main"
+var 脚本文件夹 = "/sdcard/" + 仓库名 + "/" + 仓库名 + "-main"
 //请求截图
 if (!requestScreenCapture()) {
     toastLog("请求截图失败");
