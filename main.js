@@ -70,7 +70,7 @@ function task() {
     var img = images.read(脚本文件夹+"脚本界面截图"+".png");
     var path = files.join(脚本文件夹, "赚金币.png")
     var templ = images.read(path);
-    var p = findImage(img, templ);
+    var p = findImage(img, templ,0.5);
     if (p) {
         toastLog("进入任务列表" + p.x + "," + p.y);
         click(p.x + templ.getWidth() / 2, p.y + templ.getHeight() / 2)
