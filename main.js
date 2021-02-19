@@ -1,4 +1,5 @@
 setScreenMetrics(1080, 2248);
+
 var width = device.width
 var height = device.height
 
@@ -7,6 +8,7 @@ if (!requestScreenCapture()) {
     toastLog("请求截图失败");
     exit();
 };
+
 
 watchVideo();
 task();
@@ -32,7 +34,7 @@ function watchVideo() {
     var img = images.read("/sdcard/当前截图.png");
     // var url = "https://gitee.com/Kirk678/JD-Speed-Edition/raw/master/look.png"
     // var templ = images.load(url);
-    var templ = images.read("/sdcard/看看.png");
+    var templ = images.read(files.cwd()+"看看.png");
     var p = findImage(img, templ);
     sleep(800)
     toastLog(click(p + templ.getWidth() / 2, p + templ.getHeight() / 2));
@@ -70,7 +72,7 @@ function task() {
     var img = images.read("/sdcard/当前截图.png");
     // var url = "https://gitee.com/Kirk678/JD-Speed-Edition/raw/master/earnGold.png"
     // var templ = images.load(url);
-    var templ = images.read("/sdcard/赚金币.png");
+    var templ = images.read(files.cwd()+"赚金币.png");
     var p = findImage(img, templ);
     if (p) {
         toastLog("进入任务列表" + p.x + "," + p.y);
