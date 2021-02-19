@@ -1,5 +1,5 @@
 setScreenMetrics(1080, 2248);
-
+console.show()
 var width = device.width
 var height = device.height
 
@@ -70,6 +70,7 @@ function task() {
     sleep(1000)
     var img = images.read("/sdcard/当前截图.png");
     var path = files.join(files.cwd(),"赚金币.png")
+    log(path)
     var templ = images.read(path);
     var p = findImage(img, templ);
     if (p) {
