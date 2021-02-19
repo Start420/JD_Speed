@@ -54,9 +54,9 @@ function task() {
     click(x, y);
     console.hide();
     sleep(800)
-    captureScreen(脚本文件夹);
+    captureScreen(脚本文件夹+"截图");
     sleep(1000)
-    var img = images.read(脚本文件夹);
+    var img = images.read(脚本文件夹+"截图");
     var path = files.join(脚本文件夹, "赚金币.png")
     var templ = images.read(path);
     var p = findImage(img, templ);
