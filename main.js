@@ -17,7 +17,7 @@ function main() {
     var btn;
     var i = 1;
     while (btn = findTaskBtn(1)) {
-        doShopTask(btn);
+        doShopTask();
         toastLog('第' + i + '次看商品完成');
         if (++i > 100) {
             break;
@@ -26,7 +26,7 @@ function main() {
     toastLog('商品任务结束');
     i = 1;
     while (btn = findTaskBtn(2)) {
-        doActiveTask(btn);
+        doActiveTask();
         toastLog('第' + i + '次看活动完成');
         if (++i > 30) {
             break;
@@ -35,7 +35,7 @@ function main() {
     toastLog('活动任务结束');
     if (btn = findTaskBtn(3)) {
         toastLog('正在执行看视频任务');
-        doVideoTask(btn);
+        doVideoTask();
     }
     toastLog('视频任务结束');
     sleep(1500)
@@ -107,8 +107,8 @@ function mySwipe2(time) {
     sleep(time);
 };
 //看一次商品任务
-function doShopTask(shopBtn) {
-    shopBtn.click();
+function doShopTask() {
+    click("去赚钱",1);
     sleep(random(3200 , 3800 ));
     mySwipe(random(5,6),random(800, 1400 ));
     back();
@@ -116,16 +116,16 @@ function doShopTask(shopBtn) {
     swipe(800,200,800,1600,random(300,540));
 };
 //看一次活动任务
-function doActiveTask(activeBtn) {
-    activeBtn.click();
+function doActiveTask() {
+    click("去赚钱",1);
     sleep(random(4200, 5800 ));
     mySwipe(random(6,7),random( 800, 1400 ));
     back();
     sleep(random(800, 1200 ));
     swipe(800,200,800,1600,random(300,540));
 };
-function doVideoTask(videoBtn) {
-    videoBtn.click();
+function doVideoTask() {
+    click("去赚钱",1);
     sleep(1500)
     var child = idEndsWith('ck').findOne();
             toastLog('识别文本：'+child.text());
