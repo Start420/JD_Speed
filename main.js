@@ -140,7 +140,7 @@ function doVideoTask() {
                     log(id("task_float_rl_fengkong_goon").findOne().click());
                     
                 };
-                if (videoIsEnd()) {
+                if (IsEnd()) {
                     toastLog('识别到今日已完成，结束看视频：');
                     break;
                 };
