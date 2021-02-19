@@ -9,7 +9,8 @@ if (!requestScreenCapture()) {
     exit();
 };
 
-
+files.cwd();
+log(files.cwd())
 watchVideo();
 task();
 look();
