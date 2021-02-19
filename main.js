@@ -9,8 +9,6 @@ if (!requestScreenCapture()) {
     exit();
 };
 
-files.cwd();
-log(files.cwd())
 // watchVideo();
 task();
 look();
@@ -30,15 +28,15 @@ function watchVideo() {
     var x = centerBtn.bounds().centerX();
     var y = centerBtn.bounds().centerY();
     click(x, y);
-//     captureScreen("/sdcard/当前截图.png");
-//     sleep(1000)
-//     var img = images.read("/sdcard/当前截图.png");
-//     // var url = "https://gitee.com/Kirk678/JD-Speed-Edition/raw/master/look.png"
-//     // var templ = images.load(url);
-//     var templ = images.read(files.cwd()+"看看.png");
-//     var p = findImage(img, templ);
-//     sleep(800)
-//     toastLog(click(p + templ.getWidth() / 2, p + templ.getHeight() / 2));
+    captureScreen("/sdcard/当前截图.png");
+    sleep(1000)
+    var img = images.read("/sdcard/当前截图.png");
+    // var url = "https://gitee.com/Kirk678/JD-Speed-Edition/raw/master/look.png"
+    // var templ = images.load(url);
+    var templ = images.read(files.cwd()+"看看.png");
+    var p = findImage(img, templ);
+    sleep(800)
+    toastLog(click(p + templ.getWidth() / 2, p + templ.getHeight() / 2));
     toastLog("视频任务开始");
     if (isEnd()) {
         toastLog('识别到今日已完成，结束看视频');
@@ -71,9 +69,8 @@ function task() {
     captureScreen("/sdcard/当前截图.png");
     sleep(1000)
     var img = images.read("/sdcard/当前截图.png");
-    // var url = "https://gitee.com/Kirk678/JD-Speed-Edition/raw/master/earnGold.png"
-    // var templ = images.load(url);
-    var templ = images.read(files.cwd()+"赚金币.png");
+    var path = files.join(files.cwd(),"赚金币.png")
+    var templ = images.read(path);
     var p = findImage(img, templ);
     if (p) {
         toastLog("进入任务列表" + p.x + "," + p.y);
