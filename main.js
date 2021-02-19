@@ -11,7 +11,7 @@ if (!requestScreenCapture()) {
 
 files.cwd();
 log(files.cwd())
-watchVideo();
+// watchVideo();
 task();
 look();
 //判断今日已完成是否存在
@@ -30,15 +30,15 @@ function watchVideo() {
     var x = centerBtn.bounds().centerX();
     var y = centerBtn.bounds().centerY();
     click(x, y);
-    captureScreen("/sdcard/当前截图.png");
-    sleep(1000)
-    var img = images.read("/sdcard/当前截图.png");
-    // var url = "https://gitee.com/Kirk678/JD-Speed-Edition/raw/master/look.png"
-    // var templ = images.load(url);
-    var templ = images.read(files.cwd()+"看看.png");
-    var p = findImage(img, templ);
-    sleep(800)
-    toastLog(click(p + templ.getWidth() / 2, p + templ.getHeight() / 2));
+//     captureScreen("/sdcard/当前截图.png");
+//     sleep(1000)
+//     var img = images.read("/sdcard/当前截图.png");
+//     // var url = "https://gitee.com/Kirk678/JD-Speed-Edition/raw/master/look.png"
+//     // var templ = images.load(url);
+//     var templ = images.read(files.cwd()+"看看.png");
+//     var p = findImage(img, templ);
+//     sleep(800)
+//     toastLog(click(p + templ.getWidth() / 2, p + templ.getHeight() / 2));
     toastLog("视频任务开始");
     if (isEnd()) {
         toastLog('识别到今日已完成，结束看视频');
