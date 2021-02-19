@@ -2,7 +2,8 @@ setScreenMetrics(1080, 2248);
 console.show()
 var width = device.width
 var height = device.height
-
+var 仓库名 = "JD_Speed"     //需要更换仓库名
+var 脚本文件夹 = 仓库名 + "/" + 仓库名 + "-main"
 //请求截图
 if (!requestScreenCapture()) {
     toastLog("请求截图失败");
@@ -31,9 +32,7 @@ function watchVideo() {
     captureScreen("/sdcard/当前截图.png");
     sleep(1000)
     var img = images.read("/sdcard/当前截图.png");
-    // var url = "https://gitee.com/Kirk678/JD-Speed-Edition/raw/master/look.png"
-    // var templ = images.load(url);
-    var templ = images.read(files.cwd()+"看看.png");
+    var templ = images.read(脚本文件夹 + "看看.png");
     var p = findImage(img, templ);
     sleep(800)
     toastLog(click(p + templ.getWidth() / 2, p + templ.getHeight() / 2));
@@ -69,7 +68,7 @@ function task() {
     captureScreen("/sdcard/当前截图.png");
     sleep(1000)
     var img = images.read("/sdcard/当前截图.png");
-    var path = files.join(files.cwd(),"赚金币.png")
+    var path = files.join(脚本文件夹, "赚金币.png")
     log(path)
     var templ = images.read(path);
     var p = findImage(img, templ);
@@ -149,23 +148,3 @@ function stopApp() {
         home();
     };
 };
-
-// function check() {
-//     app.launchPackage("com.jd.jdlite")
-//     // captureScreen("/sdcard/当前截图.png");
-//     // var img = images.read("/sdcard/当前截图.png");
-//     // //用“我的”按钮判断是否在有效界面
-//     // var url = "https://gitee.com/Kirk678/JD-Speed-Edition/raw/master/my.png"
-//     // var templ = images.load(url);
-//     // sleep(500)
-//     // var p = findImage(img, templ);
-//     var homePageBtn = desc("首页").findOne(2000).parent();
-//     if (homePageBtn) {
-//         toastLog("底栏存在");
-//     } else {
-//         toastLog("没找到")
-//         stopApp();
-//         app.launchPackage("com.jd.jdlite")
-//         check();
-//     };
-// };
