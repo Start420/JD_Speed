@@ -64,9 +64,9 @@ function task() {
     var y = centerBtn.bounds().centerY();
     click(x, y);
     console.hide();
-    sleep(800)
-    captureScreen(脚本文件夹+"脚本界面截图"+".png");
     sleep(4000)
+    captureScreen(脚本文件夹+"脚本界面截图"+".png");
+    sleep(1200)
     var img = images.read(脚本文件夹+"脚本界面截图"+".png");
     var path = files.join(脚本文件夹, "赚金币.png")
     var templ = images.read(path);
