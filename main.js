@@ -134,13 +134,13 @@ function doVideoTask() {
             for(var i=1; i< 400; i++) {
                 toastLog("第"+i+"次滑动");
                 sleep(200)
-                mySwipe2(random(18200, 22200 ));
+                mySwipe2(random(10200, 12200 ));
                 if(id("task_float_rl_fengkong_goon").exists())
                 {
                     log(id("task_float_rl_fengkong_goon").findOne().click());
                     
                 };
-                if (IsEnd()) {
+                if (isEnd()) {
                     toastLog('识别到今日已完成，结束看视频：');
                     break;
                 };
