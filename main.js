@@ -108,7 +108,7 @@ function mySwipe2(time) {
 };
 //看一次商品任务
 function doShopTask() {
-    click("去赚钱",1);
+    click("去赚钱",0);
     sleep(random(3200 , 3800 ));
     mySwipe(random(5,6),random(800, 1400 ));
     back();
@@ -117,7 +117,7 @@ function doShopTask() {
 };
 //看一次活动任务
 function doActiveTask() {
-    click("去赚钱",1);
+    click("去赚钱",0);
     sleep(random(4200, 5800 ));
     mySwipe(random(6,7),random( 800, 1400 ));
     back();
@@ -125,7 +125,7 @@ function doActiveTask() {
     swipe(800,200,800,1600,random(300,540));
 };
 function doVideoTask() {
-    click("去赚钱",1);
+    click("去赚钱",0);
     sleep(1500)
     var child = idEndsWith('ck').findOne();
             toastLog('识别文本：'+child.text());
